@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Slider x:Name="BigSlider" Minimum="0"  Value="0" Maximum="10" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="6" ValueChanged="BigSliderNewVAlUE"/>
+        <MediaElement x:Name="media" LoadedBehavior="Manual" MediaOpened="MediaOpener" Grid.Column="5" Grid.Row="1" MediaEnded="MediaEnd"/>
+        <Button x:Name="play" ToolTip="Пауза" Grid.Column="1"  Margin="0,29,100,19" Grid.Row="2" RenderTransformOrigin="0.282,0.493" IsEnabled="False" HorizontalAlignment="Right" Width="68" Click="StopANDStart">"/>
+        </Button>
+        <Button x:Name="Stop" Grid.Row="4" Grid.Column="1"  Click="StopANDStart">
+
+        </Button>
+        <Button x:Name="up" ToolTip="Перейти к воспроизведению следующего трека" Grid.Column="1"  Margin="0,29,10,20" Grid.Row="2" RenderTransformOrigin="0.399,0.674" IsEnabled="False" HorizontalAlignment="Right" Width="49" Click="up_Click"/>
+        <Button x:Name="down" ToolTip="Перейти к воспроизведению предыдущего трека" Grid.Column="1"  Margin="0,29,207,20" Grid.Row="2" RenderTransformOrigin="0.47,0.516" IsEnabled="False" HorizontalAlignment="Right" Width="49" Click="down_Click"/>
+        <Button x:Name="random" ToolTip="Включить рандом" Grid.Column="1"  Margin="10,10,0,10" Grid.Row="3" IsEnabled="False" HorizontalAlignment="Left" Width="100" Click="random_Click"/>
+
+
+        <Slider x:Name="Volume" Maximum="1" Minimum="0" ValueChanged="VolumeVALUE" Grid.Column="4" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="40,0,40,0"/>
+        <Label x:Name="fisrttime" Content="Time" Grid.Row="2" Grid.Column="0"/>
+        <Label x:Name="secondtime" Content="Time" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Right"/>
+        <Button x:Name="OpenFolder" Content="Open Folder" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="6" Click="Button_Click"/>
+        <ListBox x:Name="ListOfSongs" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="6"/>
+
+
+
+    </Grid>
+</Window>
